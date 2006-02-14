@@ -1,0 +1,14 @@
+!quiet = 1
+.r ejecta_K.pro
+.r snia_K.pro
+.r snii_fe_K.pro
+.r snii_ox_K.pro
+.r ejecta_MS.pro
+.r snia_MS.pro
+.r snii_fe_MS.pro
+.r snii_ox_MS.pro
+.r metalcheck.pro
+.r sntots.pro
+metalcheck
+exit
+
