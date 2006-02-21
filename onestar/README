@@ -6,7 +6,7 @@ Before you run metalcheck.sh, you must edit the second line to reflect YOUR upda
 compiled version of gasoline.  Once you have pointed to your pkdgrav directory, 
 nothing else needs to be changed. 
 
-Running the script:
+Running the script: THIS SCRIPT REQUIRES IDL
 Immediately upon running the script, you will be asked for one piece of input.  
 You must declare whether you are running gasoline using a Miller-Scalo (MS) or 
 Kroupa (K) IMF.  The script calls a number of IDL programs in order to do its job. 
@@ -18,4 +18,8 @@ directory.
 
 RESULTS of the script: A series of information regarding the expected analytical 
 yields and the actual yields generated in the simulation is output to the screen.  
+
+This code generates a number of files.  To remove the files produces in running 
+the script, run clean.sh.  You may then run the script again if you need to.
+
 
