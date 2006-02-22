@@ -28,7 +28,7 @@ function numlines,file
  On_error,2
 
  if N_params() EQ 0 then begin
-	print,'Syntax - nl = NUMLINES( file)
+	print,'Syntax - nl = NUMLINES( file)'
 	return,-1
  endif
 
@@ -41,22 +41,22 @@ function numlines,file
 	return,-1
  endif
 
- if OS_FAMILY() EQ 'unix' then begin
+; if OS_FAMILY() EQ 'unix' then begin
          free_lun,lun
 	 if strpos(file,'~') GE 0 then file = expand_tilde(file)
 	 spawn,'wc -l < '+file, result, /sh    
 	 return,long(result(0))
- endif else begin                 ;=====>> Loop through file counting lines  
-	On_ioerror,NOASCII
-	nl = 0l
-	tmp = ' '
-	 while not eof(lun) do begin
-	  readf,lun,tmp
-	  nl = nl + 1
-	  endwhile
-	 free_lun,lun
-	 return,nl
- endelse
+; endif else begin                 ;=====>> Loop through file counting lines  
+;	On_ioerror,NOASCII
+;	nl = 0l
+;	tmp = ' '
+;	 while not eof(lun) do begin
+;	  readf,lun,tmp
+;	  nl = nl + 1
+;	  endwhile
+;	 free_lun,lun
+;	 return,nl
+; endelse
 
 NOASCII:
   message,'Error reading file ' + string(file),/CON
