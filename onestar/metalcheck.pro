@@ -148,8 +148,7 @@ print, 'Last wind ejecta expected at ', t/1d9, ' Gyrs.'
 print, 'Last wind ejecta in simulation occurs at ', lastw/1d9, ' Gyrs.'
 time_w_last = abs((((t/1d9)-(lastw/1d9))/(t/1d9))*100)
 print, 'Percent difference: ', time_w_last 
-
-; Get percentages for final verdict.a
+; Get percentages for final verdict.
 ; Yields first.
 print, 'SUMMARY: YIELDS'
 ejecta_II_diff = abs(((m_snII_sim - M_SNII_ej)/M_SNII_ej)*100)
