@@ -1,4 +1,9 @@
 !quiet = 1
+.r readcol.pro
+.r read_ascii_array.pro
+.r rtipsy.pro
+.r numlines.pro
+.r rdfloat.pro
 .r ejecta_K.pro
 .r snia_K.pro
 .r snii_fe_K.pro
