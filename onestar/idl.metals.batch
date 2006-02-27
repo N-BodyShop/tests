@@ -1,5 +1,4 @@
 !quiet = 1
-.r readcol.pro
 .r read_ascii_array.pro
 .r rtipsy.pro
 .r numlines.pro

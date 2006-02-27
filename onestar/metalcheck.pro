@@ -99,9 +99,9 @@ close, lun
 eff = strmid(eff, 303, 8)
 if eff ne 807347 then read, 'dDeltaStarForm appears to have been modified.  Please enter the effective dDeltaStarForm used in yrs (see .log file to obtain this value): ', eff
 
-readcol, 'SNII.out', massII, EII, metalsII, format='f,f,f'
-readcol, 'SNIa.out', massIa, EIa, metalsIa, format='f,f,f'
-readcol, 'winds.out', massw, Ew, metalsw, format='f,f,f'
+rdfloat, 'SNII.out', massII, EII, metalsII
+rdfloat, 'SNIa.out', massIa, EIa, metalsIa
+rdfloat, 'winds.out', massw, Ew, metalsw
 ; Find first and last timesteps that emit SNII ejecta
 nonzero = where(massII ne 0)
 firstII = [min(nonzero)+1.]*eff
