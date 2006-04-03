@@ -10,7 +10,9 @@ All three of these can be checked out from the cvs repository
 to run the test.  The test will first run a simulation of a 0.3,0.7,0.7,1 LCDM 
 concordance cosmology large volume, 48^3 particles, 300 Mpc on a side.  It 
 then runs SKID and SO on the results, and then calls an IDL program (mf2.pro) 
-to compare the resulting mass function to the expected mass funcion.  
+to compare the resulting mass function to the expected mass function.  You can 
+expect all this to take an hour or two to run on a single processor (though 
+expect deviations based on processor speed).
   - If the mass function matches that expected, a congratulatory statement is 
     sent to the screen
   - If the mass function varies from that expected by more than 5% at any 
