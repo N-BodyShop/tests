@@ -7,18 +7,16 @@ int main(void)
 {
 	char ach[LINE_SIZE];
 	int a;
-	double da,dmax;
+	double da,dsum;
 
 	fgets(ach, LINE_SIZE, stdin);
-	a = scanf("%lg",&da);
-	if (a != 1) return;
-	dmax = da;
+	dsum = 0.0;
 	while (1) {
 		a = scanf("%lg",&da);
 		if (a != 1) break;
-		if (da > dmax) dmax = da;
+		dsum += da;
 		}
-	printf("%.17g\n",dmax);
+	printf("%.17g\n",dsum);
 	return 0;
 	}
 

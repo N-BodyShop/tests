@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <math.h>
 
+#define LINE_SIZE 256
+
 int main(void)
 {
-	char ach[80];
+	char ach[LINE_SIZE];
 	int a,cnt;
 	double da,dsum;
 
-	gets(ach);
+	fgets(ach, LINE_SIZE, stdin);
 	dsum = 0.0;
 	cnt = 0;
 	while (1) {

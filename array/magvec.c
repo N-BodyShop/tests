@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <math.h>
 
+#define LINE_SIZE 256
+
 int main(void)
 {
-	char ach[80];
+	char ach[LINE_SIZE];
 	int a,n,i;
 	double da;
 	double *t;
 
-	gets(ach);
+	fgets(ach, LINE_SIZE, stdin);
 	puts(ach);
 	sscanf(ach,"%d",&n);
 	t = (double *)malloc(n*sizeof(double));

@@ -6,19 +6,19 @@
 int main(void)
 {
 	char ach[LINE_SIZE];
-	int a;
-	double da,dmax;
+	int a,cnt;
+	double da,dsum;
 
 	fgets(ach, LINE_SIZE, stdin);
-	a = scanf("%lg",&da);
-	if (a != 1) return;
-	dmax = da;
+	dsum = 0.0;
+	cnt = 0;
 	while (1) {
 		a = scanf("%lg",&da);
 		if (a != 1) break;
-		if (da > dmax) dmax = da;
+		dsum += da;
+		++cnt;
 		}
-	printf("%.17g\n",dmax);
+	if (cnt) printf("%.17g\n",dsum/cnt);
 	return 0;
 	}
 

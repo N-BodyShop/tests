@@ -3,22 +3,19 @@
 
 #define LINE_SIZE 256
 
-int main(void)
+int main(int argc,char **argv)
 {
 	char ach[LINE_SIZE];
 	int a;
-	double da,dmax;
+	double da;
 
 	fgets(ach, LINE_SIZE, stdin);
-	a = scanf("%lg",&da);
-	if (a != 1) return;
-	dmax = da;
+	puts(ach);
 	while (1) {
 		a = scanf("%lg",&da);
 		if (a != 1) break;
-		if (da > dmax) dmax = da;
+		printf("%.17g\n",fabs(da));
 		}
-	printf("%.17g\n",dmax);
 	return 0;
 	}
 

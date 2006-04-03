@@ -5,14 +5,18 @@ CFLAGS = -O2
 LDLIBS = -lm
 EXEDIR = .
 
-EXE = absarr addarr grparr magvec matarr maxarr meanarr minarr \
-	rmsarr subarr gtarr multarr sumarr
+EXE = absarr addarr divarr magvec maxarr meanarr minarr \
+	rmsarr sortvec subarr gtarr sumarr
 
 all:$(EXE)
 
 $(EXE):
 	$(CC) $(CFLAGS) -o $(EXEDIR)/$@ $@.c $(LDLIBS)
 
+clean:
+	rm -f *.o $(EXE)
 
 magvec: magvec.c
 subarr: subarr.c
+sortvec: sortvec.c
+absarr: absarr.c
