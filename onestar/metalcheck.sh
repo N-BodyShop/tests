@@ -2,7 +2,7 @@ idl idl.imf.batch
 
 echo IGNORE WARNING ABOUT COOLING EOS TURNED OFF
 
-/astro/net/mega-1/abrooks/NBODY/pkdgrav/gasoline onestar.param > onestar.out
+pkdgravdir/gasoline onestar.param > onestar.out
 
 rm onestar.000*
 rm onestar.001*
