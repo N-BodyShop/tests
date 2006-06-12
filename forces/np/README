@@ -9,3 +9,10 @@ forces with those calculated by direct.
 RMS should be in the range of .1 to .2 percent.
 
 Max could be from 4% to 20%.
+
+NOTE:
+A change in vector output was made in the June 06 version of
+PKDGRAV/GASOLINE: "unpacked" ASCII vectors are no longer supported. This was
+to enable reasonably efficient parallel output.  Use
+"tstforce_pkdgrav06_30K.sh" for testing later versions of
+pkdgrav/gasoline.
