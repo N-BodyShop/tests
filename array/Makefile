@@ -6,7 +6,7 @@ LDLIBS = -lm
 EXEDIR = .
 
 EXE = absarr addarr divarr magvec maxarr meanarr minarr \
-	rmsarr sortvec subarr gtarr sumarr
+	rmsarr sortvec subarr gtarr sumarr vecpackunpk
 
 all:$(EXE)
 
@@ -20,3 +20,4 @@ magvec: magvec.c
 subarr: subarr.c
 sortvec: sortvec.c
 absarr: absarr.c
+vecpackunpk: vecpackunpk.c
