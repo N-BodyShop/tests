@@ -97,7 +97,7 @@ openr, lun, 'eff.out'
 readf, lun, eff
 close, lun
 eff = strmid(eff, 303, 8)
-if eff ne 807347 then read, 'dDeltaStarForm appears to have been modified.  Please enter the effective dDeltaStarForm used in yrs (see .log file to obtain this value): ', eff
+if long(eff) ne 807347 then read, 'dDeltaStarForm appears to have been modified.  Please enter the effective dDeltaStarForm used in yrs (see .log file to obtain this value): ', eff
 
 rdfloat, 'SNII.out', massII, EII, metalsII
 rdfloat, 'SNIa.out', massIa, EIa, metalsIa
