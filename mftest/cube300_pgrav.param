@@ -1,0 +1,24 @@
+bPeriodic       = 1
+dTheta          = 0.6
+nReplicas       = 1
+achInFile       = cube300.tbin
+achOutName      = cube300
+dHubble0        = 2.894405
+dOmega0         = 0.3
+dLambda         = 0.7
+dRedTo          = 0.0
+# iMaxRung        = 10
+# dEta            = 0.175
+# bDoGravity      = 1
+bComove         = 1
+fPeriod        = 1.0
+nSteps          = 512
+iOutInterval    = 128
+iLogInterval    = 1
+#bOverwrite      = 1
+#bVDetails       = 0
+#bDoDensity      = 1
+#bPhysicalSoft   = 1
+#bSoftMaxMul     = 1
+#dSoftMax        = 9
+
