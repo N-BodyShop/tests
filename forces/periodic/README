@@ -1,9 +1,9 @@
-Non-periodic force error tests.
+Periodic force error tests.
 
 forces_e0.direct.sh is a shell script to create the true forces.  These
 are included already, so this script SHOULD NOT be run.
 
-tstforce_XXX.sh actually runs pkdgrav or gasoline and compares the
+tstforce_XXX.sh actually runs pkdgrav, ChaNGa or gasoline and compares the
 forces with those calculated by direct.
 
 RMS should be in the range of .1 to .2 percent.
