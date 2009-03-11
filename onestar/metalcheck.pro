@@ -14,7 +14,8 @@ close, lun
 
 ; Get metallicity of the one star
 rtipsy, 'onestar.tbin', h,g,d,s
-z = s.metals[0]
+z = s[0].metals
+maxstar = 40.0
 
 if z lt 7d-5 then z = 7d-5 
 if z gt 3d-2 then z = 3d-2 
@@ -33,11 +34,11 @@ if IMF eq 'K' then goto, Kroupa
 ;Kroupa IMF
 ; fit to M, not log M!
 ; Analytic solutions from Raiteri et al. (1996)
-Kroupa: M_SNII_ej = qromb('ejecta_K', 8, 40)
-N_SNIa = qromb('snia_K', 1.5, 8)
+Kroupa: M_SNII_ej = qromb('ejecta_K', 8.0, maxstar)
+N_SNIa = qromb('snia_K', 1.5, 8.0)
 M_SNIa_ej = N_SNIa*1.40
-Fe_SNII = qromb('snii_fe_K', 8, 40)
-Ox_SNII = qromb('snii_ox_K', 8, 40)
+Fe_SNII = qromb('snii_fe_K', 8.0, maxstar)
+Ox_SNII = qromb('snii_ox_K', 8.0, maxstar)
 Fe_SNIa = N_SNIa*0.63
 Ox_SNIa = N_SNIa*0.13
 
@@ -45,11 +46,11 @@ goto, jump1
 
 ;Miller-Scalo IMF
 ; this is for fit to M, not log M! 
-MS: M_SNII_ej = qromb('ejecta_MS', 8, 40)
-N_SNIa = qromb('snia_MS', 1.5, 8)
+MS: M_SNII_ej = qromb('ejecta_MS', 8.0, maxstar)
+N_SNIa = qromb('snia_MS', 1.5, 8.0)
 M_SNIa_ej = N_SNIa*1.40
-Fe_SNII = qromb('snii_fe_ms', 8, 40)
-Ox_SNII = qromb('snii_ox_ms', 8, 40)
+Fe_SNII = qromb('snii_fe_ms', 8.0, maxstar)
+Ox_SNII = qromb('snii_ox_ms', 8.0, maxstar)
 Fe_SNIa = N_SNIa*0.63
 Ox_SNIa = N_SNIa*0.13
 
@@ -73,6 +74,7 @@ ox = read_ascii_array('onestar.00320.OxMassFrac')
 rtipsy, 'onestar.00320', h,g,d,s
 mass_fe = total(g.mass*fe)*1.665e9
 mass_ox = total(g.mass*ox)*1.665e9
+
 print, 'Total mass of Fe expected in SNII is ', Fe_SNII, ' M_sun.'
 print, 'Total mass of Fe expected in SNIa is ', Fe_SNIa, ' M_sun.'
 print, 'Total mass of Fe produced in simulation is ', mass_fe, ' M_sun.'
@@ -91,12 +93,13 @@ print, 'Percent difference: ', abs(((Ox_SNII+Ox_SNIa-mass_ox)/(Ox_SNII+Ox_SNIa))
 ; I can find to extract this info from the log file and read it into IDL.  If 
 ; anyone changes my param file, this number may be affected!  
 ; Check that the numbers match:
-eff = ' '
+effstring = ' '
 get_lun, lun
 openr, lun, 'eff.out'
-readf, lun, eff
+readf, lun, effstring
 close, lun
-eff = strmid(eff, 303, 8)
+pos = stregex(effstring,'[0-9]+ yrs',length=len)
+eff = strmid(effstring, pos, len-4)
 if long(eff) ne 807347 then read, 'dDeltaStarForm appears to have been modified.  Please enter the effective dDeltaStarForm used in yrs (see .log file to obtain this value): ', eff
 
 rdfloat, 'SNII.out', massII, EII, metalsII
@@ -115,7 +118,7 @@ nonzero = where(massw ne 0)
 firstw = [min(nonzero)+1.]*eff
 lastw = [max(nonzero)+1.]*eff
 ; Compare to expected theoretical lifetimes
-mass = 40.
+mass = maxstar
 t = 10.^(a0+a1*alog10(mass)+a2*(alog10(mass))^2.)  ;Padua ischrones
 print, 'Check that the timescales of ejecta match the analytic timescales:'
 print, 'First SNII ejecta expected at ', t/1d6, ' Myrs.'
