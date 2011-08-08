@@ -30,6 +30,7 @@ a2 = 1.262+0.3385*alog10(z)+0.05417*(alog10(z))^2.
 
 if IMF eq 'MS' then goto, MS
 if IMF eq 'K' then goto, Kroupa
+if IMF eq 'K01' then goto, Kroupa01
 
 ;Kroupa IMF
 ; fit to M, not log M!
@@ -39,6 +40,18 @@ N_SNIa = qromb('snia_K', 1.5, 8.0)
 M_SNIa_ej = N_SNIa*1.40
 Fe_SNII = qromb('snii_fe_K', 8.0, maxstar)
 Ox_SNII = qromb('snii_ox_K', 8.0, maxstar)
+Fe_SNIa = N_SNIa*0.63
+Ox_SNIa = N_SNIa*0.13
+
+goto, jump1
+
+;Kroupa01 IMF
+; fit to M, not log M!
+Kroupa01: M_SNII_ej = qromb('ejecta_K01', 8.0, maxstar)
+N_SNIa = qromb('snia_K01', 1.5, 8.0)
+M_SNIa_ej = N_SNIa*1.40
+Fe_SNII = qromb('snii_fe_K01', 8.0, maxstar)
+Ox_SNII = qromb('snii_ox_K01', 8.0, maxstar)
 Fe_SNIa = N_SNIa*0.63
 Ox_SNIa = N_SNIa*0.13
 

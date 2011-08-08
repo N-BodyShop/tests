@@ -7,6 +7,10 @@
 .r snia_K.pro
 .r snii_fe_K.pro
 .r snii_ox_K.pro
+.r ejecta_K01.pro
+.r snia_K01.pro
+.r snii_fe_K01.pro
+.r snii_ox_K01.pro
 .r ejecta_MS.pro
 .r snia_MS.pro
 .r snii_fe_MS.pro
