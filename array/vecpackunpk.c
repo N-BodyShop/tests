@@ -28,7 +28,7 @@ int main(int argc,char **argv)
 	printf("%d\n", nVec);
 	for(j = 0; j < 3; j++) { 	/* write out in unpacked order */
 	    for (i = 0; i < nVec; i++) {
-		printf("%g\n", part[i].vec[j]);
+		printf("%.15g\n", part[i].vec[j]);
 		}
 	    }
 	return 0;
