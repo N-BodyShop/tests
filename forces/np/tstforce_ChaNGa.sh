@@ -1,10 +1,10 @@
 #!/bin/sh
 # get rid of old output
-rm lambs.00200_subsamp_30K.000000.acc2
+rm lambs_30K.000000.acc2
 echo Testing forces in ChaNGa
 echo For HEXADECAPOLE:
-echo Expect RMS errors of .001
-echo Expect Max errors of .07
+echo Expect RMS errors of .0008
+echo Expect Max errors of .03
 # run program
 ../../charmrun +p 2 ../../ChaNGa -v 1 lambs_30K.param >& DIAG
 ../../array/subarr lambs_30K.000000.acc2 direct.acc > diff.acc
