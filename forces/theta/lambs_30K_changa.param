@@ -9,6 +9,6 @@ achInFile	= ../lambs.00200_subsamp_30K
 achOutName	= lambs_30K
 dDelta		= 0.0
 dSoft		= 0.0
-bPrintBinary	= 0
+# bPrintBinary	= 0
 # bKDK		= 1
 #iCheckInterval	= 10
