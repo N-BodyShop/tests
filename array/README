@@ -1,2 +1,8 @@
 These are a collection of utilities to manipulate the tipsy "array" and
 "vector" files.
+
+Note on format:
+All files are assumed to be ASCII, with the first line containing
+the number of particles, and then one line per particle.  For vector
+quantities, the values are "unpacked", meaning that the order is all the x
+coordinates, all the y coordinates, and all the z coordinates.
